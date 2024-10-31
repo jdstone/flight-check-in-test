@@ -18,10 +18,10 @@ def create_app(config_class=os.getenv('FLASK_ENV') or 'default'):
     #### Register Blueprints
     ###################################################
     from . import confirm
-    app.register_blueprint(confirm.bp, url_prefix='/confirm')
+    app.register_blueprint(confirm.bp, url_prefix='/')
     
     from . import review
-    app.register_blueprint(review.bp, url_prefix='/review')
+    app.register_blueprint(review.bp, url_prefix='/')
 
     ###################################################
     #### Error Logging

@@ -10,7 +10,7 @@ def generateToken(length=8):
                                   string.digits + '._-', k=length))
 
 
-@bp.post("/")
+@bp.post("/review")
 def review():
     if request.is_json:
         data = request.get_json()

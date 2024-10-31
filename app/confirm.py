@@ -3,7 +3,7 @@ from flask import Blueprint, jsonify, request
 bp = Blueprint('confirm', __name__)
 
 
-@bp.post("/")
+@bp.post("/confirm")
 def review():
     if request.is_json:
         data = request.get_json()
