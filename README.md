@@ -27,6 +27,7 @@ This application repository serves the purpose to provide a way to locally test 
 1. Clone this repository
 2. Set-up a web server with PHP 6.x+ support
 3. Place the two files in the `PHP` directory on your web server
-4. Uncomment the PHP API endpoints, and comment the Python API endpoints
-5. Run the web server
+4. Copy the `Python\.env` file to the root directory of the Python/Flask Flight Check-in app
+5. In the `.env` file, uncomment the PHP API endpoints, and comment the Python API endpoints
+6. Run the web server
 
