@@ -1,0 +1,53 @@
+{% extends "base.html.j2" %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="w3-bar w3-border-top w3-border-bottom w3-border-left w3-border-right w3-light-grey">
+        <button class="w3-bar-item w3-button tablinks" onclick="openForm(event,'checkinFormContainer')" id="defaultOpen">Schedule Flight Check-in</button>
+    </div>
+
+    <div id="checkinFormContainer" class="tabcontent">
+        <br>
+        <form class="needs-validation" novalidate autocomplete="off" method="POST" id="checkinForm">
+            {{ form.csrf_token }}
+            <div class="form-group">
+                {{ form.first_name.label }}
+                {{ form.first_name(class="form-control", placeholder="Enter first name")|safe }}
+            </div>
+            <div class="form-group">
+                {{ form.last_name.label }}
+                {{ form.last_name(class="form-control", placeholder="Enter last name")|safe }}
+            </div>
+            <div class="form-group">
+                {{ form.conf_num.label }}
+                {{ form.conf_num(class="form-control", placeholder="Enter confirmation number")|safe }}
+            </div>
+            <div class="form-group">
+                <label for="formControlSelectAirline">Airline</label>
+                <select class="form-control" name="formControlSelectAirline" id="formControlSelectAirline">
+                  <option>Southwest</option>
+                </select>
+            </div>
+            <div class="form-group">
+                {{ form.flight_time.label }}
+                {{ form.flight_time(class="form-control")|safe }}
+            </div>
+            <div class="form-group">
+                {{ form.flight_date.label }}
+                {{ form.flight_date(class="form-control")|safe }}
+            </div>
+            {{ form.submit(class="btn btn-primary")|safe }}
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{{ url_for('static', filename='assets/js/w3TabMenu.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/formValidation.js') }}"></script>
+{% endblock extra_js %}
+
