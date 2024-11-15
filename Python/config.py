@@ -8,6 +8,7 @@ load_dotenv(os.path.join(basedir, '.env'))
 
 class Config(object):
     TESTING = False
+    SECRET_KEY = os.getenv('SECRET_KEY', 'dev')
 
 
 class TestConfig(Config):
@@ -21,6 +22,7 @@ class DevelopmentConfig(Config):
 
 class ProductionConfig(Config):
     DEBUG = False
+    SECRET_KEY = os.getenv('SECRET_KEY')
 
 
 config = {
