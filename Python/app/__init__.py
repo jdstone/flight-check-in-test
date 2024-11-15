@@ -19,9 +19,12 @@ def create_app(config_class=os.getenv('FLASK_ENV') or 'default'):
     ###################################################
     from . import confirm
     app.register_blueprint(confirm.bp, url_prefix='/')
-    
+
     from . import review
     app.register_blueprint(review.bp, url_prefix='/')
+
+    from . import health_check
+    app.register_blueprint(health_check.bp, url_prefix='/')
 
     ###################################################
     #### Error Logging
@@ -35,4 +38,3 @@ def create_app(config_class=os.getenv('FLASK_ENV') or 'default'):
         logger.setLevel(logging.DEBUG)
 
     return app
-
