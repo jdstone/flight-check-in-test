@@ -9,4 +9,6 @@ COPY app/ /flight-check-in-test-suite/app/
 
 RUN pip3 install -r requirements.txt
 
-ENTRYPOINT [ "gunicorn", "--config", "gunicorn_config.py", "app:create_app()" ]
+ENTRYPOINT ["gunicorn"]
+CMD ["--config", "gunicorn_config.py", "app:create_app()"]
+
